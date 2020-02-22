@@ -22,3 +22,27 @@ $ rustc demo/src/wasm/add.rs -o demo/src/wasm/add.wasm --target=wasm32-unknown-u
 ```
 $ cd demo && cargo run
 ```
+
+## Run wasm compiled in Ts in Rust
+
+### Compile wasm from typescript (using assemblyscript)
+
+```
+$ cd asdemo
+$ npm install
+$ npm run asbuild
+```
+
+### Copy wasm file
+
+```
+$ cd ../
+$ cp asdemo/build/optimized.wasm demo/examples/wasm/add-ts.wasm
+```
+
+### Run in Rust
+
+```
+$ cd demo
+$ WASM_PATH="wasm/add-ts.wasm" cargo run --example asc
+```

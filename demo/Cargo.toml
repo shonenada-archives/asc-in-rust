@@ -8,3 +8,4 @@ edition = "2018"
 
 [dependencies]
 wasmer-runtime = "0.13.1"
+wasmer-as = { git = "https://github.com/onsails/wasmer-as" }

@@ -11,3 +11,7 @@ Cargo.lock
 
 # We do not commit *.wasm
 *.wasm
+
+build/
+
+node_modules/
