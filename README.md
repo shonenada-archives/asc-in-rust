@@ -14,13 +14,13 @@ $ rustup target add wasm32-unknown-unknown
 ### Compile Rust into wasm
 
 ```
-$ rustc demo/src/wasm/add.rs -o demo/src/wasm/add.wasm --target=wasm32-unknown-unknown
+$ rustc rust-demo/src/wasm/add.rs -o rust-demo/src/wasm/add.wasm --target=wasm32-unknown-unknown
 ```
 
 ### Obvious "Hello world"
 
 ```
-$ cd demo && cargo run
+$ cd rust-demo && cargo run
 ```
 
 ## Run wasm compiled in Ts in Rust
@@ -28,7 +28,7 @@ $ cd demo && cargo run
 ### Compile wasm from typescript (using assemblyscript)
 
 ```
-$ cd asdemo
+$ cd ts-demo
 $ npm install
 $ npm run asbuild
 ```
@@ -37,12 +37,12 @@ $ npm run asbuild
 
 ```
 $ cd ../
-$ cp asdemo/build/optimized.wasm demo/examples/wasm/add-ts.wasm
+$ cp ts-demo/build/optimized.wasm rust-demo/examples/wasm/add-ts.wasm
 ```
 
 ### Run in Rust
 
 ```
-$ cd demo
+$ cd rust-demo
 $ WASM_PATH="wasm/add-ts.wasm" cargo run --example asc
 ```
